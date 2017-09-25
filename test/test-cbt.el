@@ -35,14 +35,14 @@
     (expect org-cbt-thought-diary-dir
             :to-equal --org-cbt-thought-diary-dir)))
 
-(describe "org-cbt-thought-diary-edit-entry"
+(describe "org-cbt-thought-diary-new-entry"
   (before-all
-   (defun --create-new ()
-     (org-cbt-thought-diary-edit-entry)
-     (save-buffer)
-     (kill-buffer)))
+    (defun --create-new ()
+      (org-cbt-thought-diary-new-entry)
+      (save-buffer)
+      (kill-buffer)))
   (after-all
-   (fmakunbound '--create-new))
+    (fmakunbound '--create-new))
 
   (before-each
     (--setup))
@@ -50,7 +50,7 @@
     (--clear))
 
   (it "Raises an error if `org-cbt-home' is not set."
-    (expect (org-cbt-thought-diary-edit-entry)
+    (expect (org-cbt-thought-diary-new-entry)
             :to-throw))
 
   (it "Creates dirs if it doesn't exist"

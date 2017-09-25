@@ -83,7 +83,7 @@
   (setq org-cbt-thought-diary-dir (f-join dir
                                           "thought-diary")))
 
-(defun org-cbt-thought-diary-edit-entry ()
+(defun org-cbt-thought-diary-new-entry ()
   "Edit entry of thought journal"
   (interactive)
   (--org-cbt-try-setup)
